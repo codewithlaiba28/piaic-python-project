@@ -26,8 +26,8 @@ if upload_file is not None:
     x_column = st.selectbox("select x_axis column",columns)
     y_column = st.selectbox("select y_axis column",columns)
 
-    
-    # st.write("File uploaded.....")
-# st.write("hello world")
-# st.write({"key": ["value"]})
-# check git hub
+    if st.button("Generate Plot"):
+        st.line_chart(filtered_df.set_index(x_column)[y_column])
+else:
+    st.write("Waiting on file upload....")        
+
